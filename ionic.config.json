@@ -1,7 +1,8 @@
 {
   "name": "calculadora-perimetros-vscode",
   "integrations": {
-    "angular": {}
+    "angular": {},
+    "capacitor": {}
   },
   "type": "angular"
 }
