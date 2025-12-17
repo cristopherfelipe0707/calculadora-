@@ -1,0 +1,92 @@
+<!-- ============================================ -->
+<!-- COMPONENTE CÍRCULO - SEGÚN FIGURA 4 -->
+<!-- ============================================ -->
+
+<ion-card class="circulo-card">
+  
+  <!-- ============================================ -->
+  <!-- HEADER DE LA CARD -->
+  <!-- ============================================ -->
+  <ion-card-header>
+    <ion-card-title>
+      <ion-icon name="ellipse-outline" color="primary"></ion-icon>
+      Círculo
+    </ion-card-title>
+    <ion-card-subtitle>
+      Cálculo de Perímetro
+    </ion-card-subtitle>
+  </ion-card-header>
+  
+  <!-- ============================================ -->
+  <!-- CONTENIDO CON ION-CARD E ION-IMAGE -->
+  <!-- ============================================ -->
+  <ion-card-content>
+    
+    <!-- ============================================ -->
+    <!-- ICONO DEL CÍRCULO -->
+    <!-- ============================================ -->
+    <div class="imagen-container ion-text-center ion-margin-bottom">
+      <ion-icon 
+        name="ellipse-outline" 
+        size="large" 
+        color="primary"
+        style="font-size: 100px; width: 200px; height: 200px;">
+      </ion-icon>
+    </div>
+    
+    <!-- ============================================ -->
+    <!-- FORMULARIO DIRIGIDO POR PLANTILLA -->
+    <!-- ============================================ -->
+    <ion-item>
+      <ion-label position="stacked">Radio (cm)</ion-label>
+      <ion-input 
+        type="number" 
+        [(ngModel)]="radio" 
+        placeholder="Ingresa el radio del círculo"
+        min="0.1"
+        step="0.1">
+        <ion-icon name="ellipse-outline" slot="start" color="primary"></ion-icon>
+      </ion-input>
+    </ion-item>
+    
+    <!-- ============================================ -->
+    <!-- ION-BUTTON CON EVENTO CLICK -->
+    <!-- ============================================ -->
+    <ion-button 
+      expand="block" 
+      (click)="calcularPerimetro()"
+      class="ion-margin-top"
+      color="primary"
+      size="large">
+      <ion-icon name="calculator-outline" slot="start"></ion-icon>
+      Calcular Perímetro
+    </ion-button>
+    
+    <!-- ============================================ -->
+    <!-- RESULTADO - SE MUESTRA SOLO DESPUÉS DEL CLICK -->
+    <!-- ============================================ -->
+    <ion-card *ngIf="resultado !== null" class="resultado-card ion-margin-top" color="success">
+      <ion-card-content>
+        <ion-card-title color="light" class="ion-text-center">
+          <ion-icon name="checkmark-circle-outline" slot="start"></ion-icon>
+          Resultado
+        </ion-card-title>
+        
+        <div class="resultado-content ion-margin-top">
+          <h2 class="resultado-numero">
+            <strong>Perímetro = {{resultado | number:'1.2-2'}} cm</strong>
+          </h2>
+          
+          <div class="formula-info ion-margin-top">
+            <p><strong>Fórmula aplicada:</strong></p>
+            <p class="formula">P = 2 × π × r</p>
+            <p class="valores">
+              Donde: r = {{radio}} cm
+            </p>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+    
+  </ion-card-content>
+</ion-card>

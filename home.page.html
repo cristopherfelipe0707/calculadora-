@@ -1,0 +1,80 @@
+<!-- ============================================ -->
+<!-- HOME PAGE - SEGÚN FIGURA 2 (PANTALLA PRINCIPAL) -->
+<!-- ============================================ -->
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      <ion-icon name="calculator-outline" slot="start"></ion-icon>
+      Calculadora de Perímetros
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  
+  <!-- ============================================ -->
+  <!-- SEGÚN FIGURA 2: SELECTOR DE FIGURA GEOMÉTRICA -->
+  <!-- ============================================ -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        <ion-icon name="grid-outline" slot="start"></ion-icon>
+        Selecciona una Figura Geométrica
+      </ion-card-title>
+      <ion-card-subtitle>
+        Elige la figura para calcular su perímetro
+      </ion-card-subtitle>
+    </ion-card-header>
+    
+    <ion-card-content>
+      <!-- ============================================ -->
+      <!-- ION-SELECT CORREGIDO - VERSIÓN IONIC 7 -->
+      <!-- ============================================ -->
+      <ion-select 
+        label="Figura Geométrica"
+        label-placement="floating"
+        interface="popover" 
+        placeholder="Selecciona una figura"
+        (ionChange)="onFiguraSeleccionada($event)">
+        
+        <ion-select-option value="circulo">
+          <ion-icon name="ellipse-outline" slot="start"></ion-icon>
+          Círculo
+        </ion-select-option>
+        
+        <ion-select-option value="triangulo">
+          <ion-icon name="triangle-outline" slot="start"></ion-icon>
+          Triángulo Escaleno
+        </ion-select-option>
+      </ion-select>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- ============================================ -->
+  <!-- SEGÚN ESPECIFICACIONES: DIRECTIVA *ngIf -->
+  <!-- ============================================ -->
+  
+  <!-- Card informativo cuando no hay selección -->
+  <ion-card *ngIf="figuraSeleccionada === ''" color="light" class="info-card">
+    <ion-card-content>
+      <div class="ion-text-center">
+        <ion-icon name="information-circle-outline" size="large" color="medium"></ion-icon>
+        <p class="ion-margin-top">
+          <strong>Selecciona una figura geométrica para comenzar</strong>
+        </p>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- ============================================ -->
+  <!-- SEGÚN ESPECIFICACIONES: *ngIf PARA MOSTRAR COMPONENTE -->
+  <!-- ============================================ -->
+  
+  <!-- Mostrar componente círculo cuando se selecciona -->
+  <app-circulo *ngIf="figuraSeleccionada === 'circulo'"></app-circulo>
+  
+  <!-- Mostrar componente triángulo cuando se selecciona -->
+  <app-triangulo *ngIf="figuraSeleccionada === 'triangulo'"></app-triangulo>
+
+</ion-content>

@@ -1,0 +1,72 @@
+/* Triángulo component specific styles */
+.triangulo-card {
+  margin: 20px 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.1);
+  
+  .imagen-container {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+  }
+  
+  .figura-imagen {
+    max-width: 200px;
+    height: auto;
+    margin: 0 auto;
+  }
+  
+  .formulario {
+    margin: 20px 0;
+    
+    ion-item {
+      margin-bottom: 16px;
+      border-radius: 8px;
+      
+      ion-icon {
+        margin-right: 8px;
+      }
+    }
+  }
+  
+  .botones {
+    .calcular-btn {
+      --border-radius: 8px;
+      --box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+    }
+  }
+  
+  .resultado-card {
+    border-radius: 12px;
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    
+    .resultado-numero {
+      color: white;
+      text-align: center;
+      margin: 16px 0;
+      font-size: 1.4em;
+    }
+    
+    .formula-info {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 16px;
+      border-radius: 8px;
+      color: white;
+      
+      .formula {
+        font-size: 1.1em;
+        font-weight: bold;
+        margin: 8px 0;
+      }
+    }
+  }
+}
+
+/* Responsive para pantallas grandes */
+@media (min-width: 768px) {
+  .triangulo-card {
+    max-width: 500px;
+    margin: 20px auto;
+  }
+}

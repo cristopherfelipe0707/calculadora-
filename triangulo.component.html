@@ -1,0 +1,121 @@
+<!-- ============================================ -->
+<!-- COMPONENTE TRIÁNGULO - SEGÚN FIGURA 5 -->
+<!-- ============================================ -->
+
+<ion-card class="triangulo-card">
+  
+  <!-- ============================================ -->
+  <!-- HEADER DE LA CARD -->
+  <!-- ============================================ -->
+  <ion-card-header>
+    <ion-card-title>
+      <ion-icon name="triangle-outline" color="success"></ion-icon>
+      Triángulo Escaleno
+    </ion-card-title>
+    <ion-card-subtitle>
+      Cálculo de Perímetro
+    </ion-card-subtitle>
+  </ion-card-header>
+  
+  <!-- ============================================ -->
+  <!-- CONTENIDO CON ION-CARD E ION-IMAGE -->
+  <!-- ============================================ -->
+  <ion-card-content>
+    
+    <!-- ============================================ -->
+    <!-- ICONO DEL TRIÁNGULO -->
+    <!-- ============================================ -->
+    <div class="imagen-container ion-text-center ion-margin-bottom">
+      <ion-icon 
+        name="triangle-outline" 
+        size="large" 
+        color="success"
+        style="font-size: 100px; width: 200px; height: 200px;">
+      </ion-icon>
+    </div>
+    
+    <!-- ============================================ -->
+    <!-- FORMULARIO PARA TRIÁNGULO ESCALENO -->
+    <!-- Tres campos según especificaciones -->
+    <!-- ============================================ -->
+    
+    <!-- Lado 1 -->
+    <ion-item>
+      <ion-label position="stacked">Lado 1 (cm)</ion-label>
+      <ion-input 
+        type="number" 
+        [(ngModel)]="lado1" 
+        placeholder="Ingresa el primer lado"
+        min="0.1"
+        step="0.1">
+        <ion-icon name="resize-outline" slot="start" color="success"></ion-icon>
+      </ion-input>
+    </ion-item>
+    
+    <!-- Lado 2 -->
+    <ion-item>
+      <ion-label position="stacked">Lado 2 (cm)</ion-label>
+      <ion-input 
+        type="number" 
+        [(ngModel)]="lado2" 
+        placeholder="Ingresa el segundo lado"
+        min="0.1"
+        step="0.1">
+        <ion-icon name="resize-outline" slot="start" color="success"></ion-icon>
+      </ion-input>
+    </ion-item>
+    
+    <!-- Lado 3 -->
+    <ion-item>
+      <ion-label position="stacked">Lado 3 (cm)</ion-label>
+      <ion-input 
+        type="number" 
+        [(ngModel)]="lado3" 
+        placeholder="Ingresa el tercer lado"
+        min="0.1"
+        step="0.1">
+        <ion-icon name="resize-outline" slot="start" color="success"></ion-icon>
+      </ion-input>
+    </ion-item>
+    
+    <!-- ============================================ -->
+    <!-- ION-BUTTON CON EVENTO CLICK -->
+    <!-- ============================================ -->
+    <ion-button 
+      expand="block" 
+      (click)="calcularPerimetro()"
+      class="ion-margin-top"
+      color="success"
+      size="large">
+      <ion-icon name="calculator-outline" slot="start"></ion-icon>
+      Calcular Perímetro
+    </ion-button>
+    
+    <!-- ============================================ -->
+    <!-- RESULTADO - SE MUESTRA SOLO DESPUÉS DEL CLICK -->
+    <!-- ============================================ -->
+    <ion-card *ngIf="resultado !== null" class="resultado-card ion-margin-top" color="success">
+      <ion-card-content>
+        <ion-card-title color="light" class="ion-text-center">
+          <ion-icon name="checkmark-circle-outline" slot="start"></ion-icon>
+          Resultado
+        </ion-card-title>
+        
+        <div class="resultado-content ion-margin-top">
+          <h2 class="resultado-numero">
+            <strong>Perímetro = {{resultado | number:'1.2-2'}} cm</strong>
+          </h2>
+          
+          <div class="formula-info ion-margin-top">
+            <p><strong>Fórmula aplicada:</strong></p>
+            <p class="formula">P = Lado1 + Lado2 + Lado3</p>
+            <p class="valores">
+              Donde: L1 = {{lado1}} cm, L2 = {{lado2}} cm, L3 = {{lado3}} cm
+            </p>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+    
+  </ion-card-content>
+</ion-card>

@@ -1,0 +1,27 @@
+/* Home page specific styles */
+.selection-card {
+  margin-bottom: 20px;
+  
+  ion-card-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+.info-card {
+  margin-top: 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  
+  p {
+    margin: 8px 0;
+  }
+}
+
+/* Responsive design */
+@media (min-width: 768px) {
+  .selection-card, .info-card {
+    max-width: 500px;
+    margin: 20px auto;
+  }
+}
