@@ -1,0 +1,42 @@
+{
+  "name": "calculadora-perimetros",
+  "version": "1.0.0",
+  "description": "Calculadora de Perímetros - Ionic Framework para VS Code",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve --port 4200 --host 0.0.0.0",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "serve:vscode": "ng serve --port 4200 --host 0.0.0.0",
+    "build:vscode": "ng build --configuration production",
+    "preview": "ng serve --port 4200 --host 0.0.0.0"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^17.0.0",
+    "@angular/common": "^17.0.0",
+    "@angular/compiler": "^17.0.0",
+    "@angular/core": "^17.0.0",
+    "@angular/forms": "^17.0.0",
+    "@angular/platform-browser": "^17.0.0",
+    "@angular/platform-browser-dynamic": "^17.0.0",
+    "@angular/router": "^17.0.0",
+    "@ionic/angular": "^7.0.0",
+    "@ionic/core": "^7.0.0",
+    "ionicons": "^7.0.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.14.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^17.0.0",
+    "@angular/cli": "^17.0.0",
+    "@angular/compiler-cli": "^17.0.0",
+    "@angular/language-service": "^17.0.0",
+    "@ionic/angular-toolkit": "^10.0.0",
+    "@types/jasmine": "~5.1.0",
+    "@types/node": "^18.18.0",
+    "typescript": "~5.2.0"
+  }
+}
